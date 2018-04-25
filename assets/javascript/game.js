@@ -5,22 +5,23 @@
 
 //Initialize all variables 
 var userInput;
-// var copmuterGuess
+var allGuesses = [];
+var computerPick = [];
 var wins = 0;
 var losses = 0;
 var guessesLeft = 5;
-var allGuesses = [];
-    //guesses so far
-    //
+var alphabet = "abcdefghijklmnopqrstuvwxyz";    
+
+
 
 //code for computer to pick a random letter
-var alphabet = "abcdefghijklmnopqrstuvwxyz";
+  computerPick += alphabet[Math.floor(Math.random() * alphabet.length)]; 
+console.log(computerPick);
 
-while (allGuesses.length < 5) {
-  allGuesses += alphabet[Math.floor(Math.random() * alphabet.length)];
-} 
-console.log(allGuesses);
 //code to tell user to enter a guess
+userInput = prompt("Guess a letter!");
+allGuesses.push(userInput);
+
 
 //compare guess to compters randomly picked letter (use document.onkeyup = function())
 
