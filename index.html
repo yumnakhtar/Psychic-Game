@@ -10,13 +10,37 @@
 <body>
 <h1> The Psychic Game!</h1>
 
-<h3>Guess what letter I'm thinking of: </h3>
+<h3>Guess what letter I'm thinking of: <span="user-input"></span></h3>
  <br />
-
-<p>Your Guesses so far: </p>
-<p>Guesses left: </p>
-<p>Wins: </p>
-<p>Losses: </p>
+<!-- use conditionals to add the numbers here -->
+<p>Your Guesses so far: <span id="all-guesses"></span></p>
+<p>Guesses left: <span id="guesses-left"></span></p>
+<p>Wins: <span id="wins"></span></p>
+<p>Losses: <span id="losses"></span></p>
 
 </body>
 </html>
+
+
+<!-- // generate a random letter a-z
+  var computerGuess = String.fromCharCode(
+    Math.floor(Math.random() * 26) + 97
+  )
+
+// check how many gueeses are left
+// if the user still has guesses raimaining
+//* ask user for a letter;
+//* store user input in a variable. 
+//* lowercase 
+// make sure its not a number or a character other than a-z
+// check if user has already guessed the letter by checking if letter guessed is in a array of guesses
+// if the letter is not in the array add it else tell user to try another letter
+// if letter is not in array also minus one from the guesses left
+// compare the letter to the computer guess 
+// if it is correct wins go up
+// if its incorrect and user out of gusses losses go up
+    // if incorrect and ueser still has guesses run all steps above again
+
+
+//how to print js onto html:
+    document.querySelector("#guesses-left").innerHTML = guessesLeft; -->
