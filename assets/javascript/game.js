@@ -17,7 +17,6 @@ function randomGenerator(){
     $(".guessed").empty();
     allGuesses.length = 0;
     guessesLeft = 5;
-    console.log("the random letter is: ", computerPick);
 }   
 
 document.onkeydown = function(event) {
@@ -30,18 +29,7 @@ document.onkeydown = function(event) {
                 $(".guessed").append(userInput);
                 checkMatch(userInput);
             }
-            else{
-                console.log("its a dupe!")
-            }
-
         }
-        else {
-            console.log("invalid input");
-        }
-
-    }
-    else{
-        console.log("no more guesses left")
     }
 }
 
@@ -57,14 +45,11 @@ function checkDup(input){
 function checkMatch(currInput) {
     if (currInput === computerPick){
         wins++;
-        console.log("you win!");
         $(".wins").text(wins);
         randomGenerator();
     }
     else {
-        console.log("nahhh");
         if (guessesLeft === 0){
-            console.log("you lose");
             losses++;
             $(".losses").text(losses);
             randomGenerator();
