@@ -1,4 +1,4 @@
-// //Additional stuff i'd like to add: a button to restart the game
+// //Additional stuff i'd like to add: a button to restart the game, somehwere that displays the answer
 
 window.onload = function() {
     //Initialize all variables 
@@ -11,7 +11,7 @@ window.onload = function() {
     var guessesLeft = 5;
     var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
     
-//computer picks a random letter
+//computer picks a random letter and clears out all the guessed letters
 function randomGenerator(){
     computerPick = alphabet[Math.floor(Math.random() * alphabet.length)]; 
     $(".guessed").empty();
@@ -19,6 +19,7 @@ function randomGenerator(){
     guessesLeft = 5;
 }   
 
+//listens for a key down
 document.onkeydown = function(event) {
     userInput = event.key.toUpperCase();
     if(guessesLeft > 0){
@@ -33,6 +34,7 @@ document.onkeydown = function(event) {
     }
 }
 
+//checks to see if current input is unique from previous guesses
 function checkDup(input){
     for (var i=0; i<allGuesses.length; i++){
         if (input === allGuesses[i]){ 
@@ -42,10 +44,12 @@ function checkDup(input){
         return false; 
 }
 
+//compares input to the computerPick
 function checkMatch(currInput) {
     if (currInput === computerPick){
         wins++;
         $(".wins").text(wins);
+
         randomGenerator();
     }
     else {
@@ -60,5 +64,6 @@ function checkMatch(currInput) {
     }
 }
 
+//calling function to generate a random number
 randomGenerator();
 }
