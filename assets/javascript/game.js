@@ -48,13 +48,14 @@ function checkDup(input){
 function checkMatch(currInput) {
     if (currInput === computerPick){
         wins++;
+        $(".answers").append(computerPick)
         $(".wins").text(wins);
-
         randomGenerator();
     }
     else {
         if (guessesLeft === 0){
             losses++;
+            $(".answers").append(computerPick)
             $(".losses").text(losses);
             randomGenerator();
         }
@@ -72,6 +73,7 @@ $("button").click(function(){
     $(".losses").text(losses);
     randomGenerator();
     $(".left").text(guessesLeft);
+    $(".answers").text("Answers so far: ")
 })
 
 //calling function to generate a random number

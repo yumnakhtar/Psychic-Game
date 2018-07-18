@@ -64,3 +64,8 @@ button:hover {
 button:focus {
     outline: 0;
 }
+
+.answers {
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+}
