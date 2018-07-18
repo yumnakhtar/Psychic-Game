@@ -64,6 +64,16 @@ function checkMatch(currInput) {
     }
 }
 
+//restart game
+$("button").click(function(){
+    wins = 0;
+    losses = 0;
+    $(".wins").text(wins);
+    $(".losses").text(losses);
+    randomGenerator();
+    $(".left").text(guessesLeft);
+})
+
 //calling function to generate a random number
 randomGenerator();
 }
