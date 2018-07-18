@@ -1,5 +1,3 @@
-// //Additional stuff i'd like to add: a button to restart the game, somehwere that displays the answer
-
 window.onload = function() {
     //Initialize all variables 
     var userInput;
